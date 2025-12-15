@@ -1,0 +1,163 @@
+@use "../../../styles/vars.scss";
+
+:host {
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2 {
+      margin: 24px 0;
+      font-size: 2.5em;
+      font-family: vars.$font-primaria;
+      font-weight: 700;
+      color: #343434;
+      span {
+        font-size: 1em;
+      }
+    }
+
+    .conteiner-jogo-memoria {
+      user-select: none;
+
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+
+      // flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      // width: 100%;
+      min-width: 40%;
+      // max-width: 100%;
+      flex-wrap: wrap;
+      gap: 20px;
+      .card {
+        box-sizing: border-box;
+        // height: 240px;
+        // width: 10vw;
+        // max-width: 160px;
+        // flex-grow: 1;
+        // background-color: ;
+        box-shadow: 0px 0px 6px 1px rgba($color: #343434, $alpha: 0.75);
+        -webkit-box-shadow: 0px 0px 6px 1px rgba($color: #343434, $alpha: 0.75);
+        -moz-box-shadow: 0px 0px 6px 1px rgba($color: #343434, $alpha: 0.75);
+        border-radius: 8px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+
+        // img {
+        //   width: 90px;
+        //   height: 100px;
+        // }
+        &.combinacaoCorreta{
+          .card-front-background {
+            transition: 0.5s;
+            opacity: 0.5;
+          }
+        }
+
+        &.jogoNaoIniciado{
+          .card-back-background{
+
+            opacity: 0.5;
+          }
+        }
+        img {
+          // width: 100%;
+          // height: 100%;
+          // border-radius: 8px;
+          width: 80%;
+          height: 80%;
+          max-width: 140px;
+          max-height: 140px;
+        }
+        // span {
+        //   font-family: vars.$font-terciaria;
+        //   font-size: 1.3em;
+        //   font-weight: 600;
+        //   color: #343434;
+        // }
+      }
+      .card-back-background{
+        background-image: url('../../../assets/Gemini_Generated_Image_t2vkaet2vkaet2vk.png');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: center;
+      }
+      .card-front-background{
+        background-image: url('../../../assets/Gemini_Generated_Image_zii5huzii5huzii5.png');
+        // background-color: #F2E1C2;
+        background-clip: content-box;
+        background-position: center;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        // img {
+        //   width: 80%;
+        //   height: 80%;
+        //   max-width: 140px;
+        //   max-height: 140px;
+        // }
+      }
+    }
+  }
+
+    /* Estilos utilitários adicionais não cobertos pelo Tailwind padrão podem vir aqui */
+     /* 1. SCENE
+      Define a profundidade. Quanto menor o valor, mais dramático é o 3D.
+      Geralmente entre 600px e 1200px é o ideal.
+    */
+    .scene {
+      // width: 300px;
+      // height: 420px;
+        height: 240px;
+        width: 10vw;
+        max-width: 160px;
+        flex-grow: 1;
+
+      perspective: 1000px;
+      cursor: pointer;
+    }
+
+    /* 2. CARD
+      O container que segura as duas faces.
+      'preserve-3d' é crucial para que os filhos girem no espaço 3D.
+    */
+    .card {
+      position: relative;
+      transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Animação suave com leve salto */
+      transform-style: preserve-3d;
+    }
+
+    /* 3. ESTADO VIRADO
+      Quando o Angular adiciona essa classe, giramos o container.
+    */
+    .card.is-flipped {
+      transform: rotateY(180deg);
+    }
+
+    /* 4. FACES
+      Posicionamento absoluto para que fiquem uma em cima da outra.
+      'backface-visibility: hidden' faz o verso ficar invisível quando virado.
+    */
+    .card-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden; /* Safari */
+      backface-visibility: hidden;
+      overflow: hidden; /* Mantém o border-radius limpo */
+    }
+
+    /* 5. FACE TRASEIRA
+      A face traseira já começa virada 180 graus, para que quando o cartão
+      gire 180 graus, ela fique em 0 (visível).
+    */
+    .card-back {
+      transform: rotateY(180deg);
+    }
+    /* Estilos utilitários adicionais não cobertos pelo Tailwind padrão podem vir aqui */
+
+}

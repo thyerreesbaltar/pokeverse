@@ -1,0 +1,57 @@
+<app-container>
+<main>
+
+  <section>
+
+    <div class="header">
+      <h4>Qual é esse <span class="text-pokemon"> Pokemon</span> ?</h4>
+
+      <button class="ajuda" matTooltip="Clique para receber dicas sobre qual é o pokemon misterioso" matTooltipPosition="above" (click)="ativarDica()" [disabled]="dicas().length === 5">
+        ?
+      </button>
+    </div>
+
+    <figure>
+      <img [ngClass]="pokemonDesconhecido()? 'pokemon-misterioso': ''" [src]="pokemonImage()" alt="Pokemon desconhecido">
+    </figure>
+
+    <form [formGroup]="formPokemon" (ngSubmit)="submitPokemon()">
+      <input id="pokemon-name" class="pokemon-name" type="text" formControlName="pokemon">
+      <button type="submit" [disabled]="formPokemon.invalid">Confirmar</button>
+    </form>
+  </section>
+  @if(!pokemonDesconhecido()){
+    <div class="pokemon-name">
+      <h2>{{ pokemon.nome | titlecase}}</h2>
+    </div>
+  }
+
+    <section class="tentativas-ajuda">
+      @if(tentativas().length !== 0){
+
+        <div class="tentativas">
+          <h3>Quantidade de tentativa: <strong>{{ tentativas().length }}</strong>.</h3>
+          <ul>
+            @for(pokemon of tentativas(); track $index){
+              <li><span>{{ pokemon }}</span></li>
+            }
+          </ul>
+        </div>
+      }
+      @if(dicas().length !== 0){
+
+        <div class="dicas">
+          <h3>Quantidade de dicas utilizadas <strong>{{ dicas().length }}</strong> de <strong>5</strong>.</h3>
+          <ul>
+            @for(dica of dicas(); track $index) {
+              <li><span>{{dica}}</span></li>
+            }
+          </ul>
+        </div>
+      }
+    </section>
+
+
+</main>
+
+</app-container>

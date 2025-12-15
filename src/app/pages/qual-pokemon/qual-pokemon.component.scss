@@ -1,0 +1,193 @@
+@use "../../../styles/vars.scss";
+:host {
+  main {
+    margin-top: 48px;
+    padding-bottom: 28px;
+    section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+
+      .header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        h4{
+          display: inline-flex;
+          align-items: flex-end;
+          justify-content: center;
+          flex-grow: 1;
+          font-size: 28px;
+          font-family: vars.$font-primaria;
+          span {
+            margin: 0 12px;
+            // font-family: vars.$font-terciaria;
+            font-size: 2rem;
+            // font-weight: bolder;
+            display: inline-block;
+            // color: #F2C230;
+            // text-shadow:
+            //   -1px -1px 0 #368ABF,  // Cima-esquerda
+            //   1px -1px 0 #368ABF,  // Cima-direita
+            //   -1px  1px 0 #368ABF,  // Baixo-esquerda
+            //   1px  1px 0 #368ABF;  // Baixo-direita
+          }
+        }
+
+        button {
+          width: 30px;
+          height: 30px;
+
+          border: 2px solid #368ABF;
+          border-radius: 50%;
+          background: transparent;
+
+          color:  #F2C230;
+          font-size: 22px;
+          font-weight: bold;
+          font-family: vars.$font-secundaria;
+
+          &:disabled {
+            color: #192124;
+            border-color: #898989;
+            cursor:  default;
+          }
+        }
+      }
+
+      figure {
+        margin-top: 28px ;
+        width: 80vw;
+        height: 25vh;
+
+        max-width: 360px;
+        max-height: 300px;
+        img {
+          width: 100%;
+          height: 100%;
+          &.pokemon-misterioso{
+            filter: contrast(1.75) brightness(.0);
+          }
+
+
+        }
+      }
+
+      form {
+        margin-top: 28px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        // height: 100%;
+        height: 48px;
+        input#pokemon-name {
+          width: 90%;
+
+          padding: 8px 16px;
+          max-width: 300px;
+          font-family: vars.$font-secundaria;
+          font-size: 28px;
+          font-weight: 700;
+          text-justify: center;
+          border-radius: 8px;
+          border: 2px solid #368ABF;
+          &:focus{
+            outline: 0;
+            border: 2px solid #368ABF !important;
+
+          }
+        }
+
+        button {
+          height: 100%;
+          width: 132px;
+          border-radius: 8px;
+          background-color: rgba(#F2C230, 0.8);
+          font-size: 24px;
+          font-family: vars.$font-primaria;
+          color: #368ABF;
+          font-weight: bold;
+
+          transition: ease 0.5s;
+          &:hover {
+            transition: 0.5s;
+            background-color: rgba(#F2C230, 1);
+            background-color: rgba(#368ABF, 1);
+            color: rgba($color: #F2C230, $alpha: 1 );
+          }
+
+          &:disabled {
+            color: #192124;
+            background-color: #898989;
+          }
+        }
+      }
+    }
+
+    .pokemon-name {
+      margin: 24px 0;
+      display: flex;
+      // align-items: center;
+      justify-content: center;
+      h2 {
+        font-family: vars.$font-secundaria;
+        font-weight: bold;
+        font-size: 4em;
+        color: rgb(46, 190, 46);
+      }
+    }
+    .tentativas-ajuda {
+      margin-top: 48px;
+      display: flex;
+      flex-direction: row;
+      align-items: start;
+      justify-content: center;
+      gap: 58px;
+      .tentativas {
+        ul {
+          li {
+            color: #EB503D;
+
+          }
+        }
+      }
+      .dicas {
+        ul {
+          li {
+            color: #222324;
+          }
+        }
+      }
+
+      .tentativas, .dicas {
+        h3 {
+          display: block;
+          font-family: vars.$font-primaria;
+          font-size: 22px;
+          color: #343434;
+          margin-bottom: 28px;
+        }
+
+        ul {
+          display: flex;
+          flex-direction: column;
+          gap: 18px;
+          li {
+            font-size: 28px;
+            font-family: vars.$font-terciaria;
+            font-weight: 700;
+
+            &:last-child{
+              border-bottom: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

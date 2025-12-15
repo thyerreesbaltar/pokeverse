@@ -1,0 +1,102 @@
+@use "../../../styles/vars.scss";
+
+:host {
+
+
+   .types {
+                display: flex;
+                width: 100%;
+                li {
+                    align-content: center;
+                    // align-items: center;
+                    // text-align: center;
+                    min-height: 28px;
+                    min-width: 36px;
+                    // width: 100%;
+                    padding: 4px 8px;
+                    text-align: center;
+
+                    font-family: vars.$font-primaria;
+                    color: #fff;
+                    font-weight: 600;
+
+                &:first-child{
+                    border-radius: 8px 0 0 8px;
+                }
+                &:last-child{
+                    border-radius: 0 8px 8px 0;
+                }
+                  &:only-child {
+                    border-radius: 18px;
+                    width: 112px;
+                  }
+                    &.tipo-normal {
+                    background-color: vars.$normal;
+                    }
+                    &.tipo-grass {
+                    background-color: vars.$planta;
+                    }
+                    &.tipo-poison {
+                    background-color: vars.$venenoso;
+                    }
+                    &.tipo-water {
+                    background-color: vars.$agua;
+                    }
+                    &.tipo-fire {
+                    background-color: vars.$fogo;
+                    }
+                    &.tipo-bug {
+                    background-color: vars.$inseto;
+                    }
+                    &.tipo-fighting {
+                    background-color: vars.$lutador;
+                    }
+                    &.tipo-flying {
+                    background-color: vars.$voador;
+                    }
+                    &.tipo-ground {
+                    background-color: vars.$terra;
+                    }
+                    &.tipo-rock {
+                    background-color: vars.$pedra;
+                    }
+                    &.tipo-ghost {
+                    background-color: vars.$fantasma;
+                    }
+                    &.tipo-steel {
+                    background-color: vars.$metal;
+                    }
+                    &.tipo-electric {
+                    background-color: vars.$eletrico;
+                    }
+                    &.tipo-psychic {
+                    background-color: vars.$psiquico;
+                    }
+                    &.tipo-ice {
+                    background-color: vars.$gelo;
+                    }
+                    &.tipo-dragon {
+                    background-color: vars.$dragao;
+                    }
+                    &.tipo-dark {
+                    background-color: vars.$sombra;
+                    }
+                    &.tipo-fairy {
+                    background-color: vars.$fada;
+                    }
+                    &.tipo-stellar {
+                    background-color: white;
+                    color: black;
+                    }
+                    &.tipo-unknown {
+                    background-color: white;
+                    color: black;
+                    }
+
+
+
+            }
+        }
+
+
+}

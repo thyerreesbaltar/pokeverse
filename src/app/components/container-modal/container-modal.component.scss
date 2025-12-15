@@ -1,0 +1,31 @@
+:host {
+  .modal {
+    position: fixed;
+    top: 15%;
+    left: 36%;
+    z-index: 1001;
+    width: 40vw;
+    max-width: 686px;
+    height: 50vh;
+    max-height: 554px;
+
+    background-color: #f5f5f5ef;
+
+    border-radius: 16px;
+
+    padding: 24px;
+  }
+
+  @media screen and (max-width: 378px) {
+    .modal {
+      width: 95%;
+      max-width: none;
+      top: 15%;
+      left: 2.5%;
+      // height: 60vh;
+      height: auto;
+      max-height: none;
+
+    }
+  }
+}

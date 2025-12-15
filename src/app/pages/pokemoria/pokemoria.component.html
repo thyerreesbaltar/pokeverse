@@ -1,0 +1,28 @@
+<app-container>
+  <main>
+    <h2>Jogo da memório <span class="text-pokemon">Pokemon</span></h2>
+
+    <app-temporizador [iniciar]="jogoIniciado()" [terminouJogo]="jogoFinalizado()" (iniciadoJogo)="iniciarJogo($event)" (tempoFinalizado)="tempoAcabou($event)"/>
+    <section class="conteiner-jogo-memoria">
+      @for (cardPokemon of baralhoCardsPokemon(); track cardPokemon.id) {
+      <div
+        class="card scene"
+        (click)="toggleFlip(cardPokemon.id)"
+        [ngClass]="{
+          'is-flipped': !cardPokemon.faceParaCima && !cardPokemon.combinacaoEncontrada,
+          'combinacaoCorreta': cardPokemon.combinacaoEncontrada,
+          'jogoNaoIniciado': !jogoIniciado() || tempoJogoAcabou()
+        }"
+
+      >
+        <div class="card card-back-background card-back card-face"></div>
+
+        <div class="card card-front card-front-background card-face">
+          <img [src]="cardPokemon.imageUrl" alt="" />
+        </div>
+      </div>
+      }
+    </section>
+  </main>
+</app-container>
+

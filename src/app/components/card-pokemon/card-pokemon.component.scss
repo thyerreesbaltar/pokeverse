@@ -1,0 +1,72 @@
+@use '../../../styles/vars.scss';
+:host {
+    .card-pokemon-container {
+        width: 28vw;
+        height: 30vh;
+        max-width: 140px;
+        max-height: 172px;
+
+        background-color: rgba($color: #C6C6C6, $alpha: 0.3);
+
+        cursor: pointer;
+
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        border-radius: 16px;
+
+        box-shadow: 0px 0px 6px 1px rgba($color: #525252, $alpha: 0.75);
+        -webkit-box-shadow: 0px 0px 6px 1px rgba($color: #525252, $alpha: 0.75);
+        -moz-box-shadow: 0px 0px 6px 1px rgba($color: #525252, $alpha: 0.75);
+
+        &:hover{
+            transition: 0.5s;
+            background-color: rgba($color: #C6C6C6, $alpha: 0.6);
+            box-shadow: 0px 0px 6px 1px rgba($color: #343434, $alpha: 0.75);
+            -webkit-box-shadow: 0px 0px 6px 1px rgba($color: #343434, $alpha: 0.75);
+            -moz-box-shadow: 0px 0px 6px 1px rgba($color: #343434, $alpha: 0.75);
+
+        }
+        .card-pokemon-image {
+            position: absolute;
+            margin-top: 5px;
+            img {
+                width: 98px;
+                height: 98px;
+            }
+        }
+
+        .card-pokemon-descricao {
+            margin-top: 75%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+
+            .name-pokemon {
+                font-family: vars.$font-primaria;
+                font-weight: bold;
+                font-size: 1.3em;
+                color: #343434;
+            }
+
+    }
+  }
+  @media screen and (max-width: 378px) {
+  .card-pokemon-container {
+    // box-sizing: border-box;
+    width: 80vw;
+
+    max-width: 260px;
+       .card-pokemon-descricao{
+        position: relative;
+        margin: 0;
+        margin-top: 52%;
+        // top: 0;
+        bottom: 20%;
+       }
+
+  }
+  }
+}

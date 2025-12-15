@@ -1,0 +1,86 @@
+:host {
+
+  div {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    z-index: 1000;
+    /* 1. O Fundo que bloqueia a tela */
+.loading-overlay {
+  position: fixed; /* Fixa na tela, mesmo se rolar a página */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  /* Centraliza o spinner */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* Estilo visual */
+  background-color: rgba(255, 255, 255, 0.8); /* Branco com transparência */
+  backdrop-filter: blur(5px); /* Efeito de vidro fosco (moderno) */
+  z-index: 9999; /* Garante que fique acima de tudo */
+}
+
+.loading-overlay p {
+  margin-top: 20px;
+  font-family: sans-serif;
+  color: #333;
+  font-weight: bold;
+  animation: pulse 1.5s infinite;
+}
+
+/* 2. A Pokébola Giratória (CSS Puro) */
+.pokeball-spinner {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 4px solid #333; /* Borda preta da pokébola */
+  position: relative;
+
+  /* Cores da Pokébola (Degradê abrupto) */
+  background: linear-gradient(
+    to bottom,
+    #ee1515 0%,
+    #ee1515 48%, /* Metade vermelha */
+    #333 48%,    /* Linha preta no meio */
+    #333 52%,
+    #fff 52%,    /* Metade branca */
+    #fff 100%
+  );
+
+  animation: spin 1s linear infinite;
+}
+
+/* O botão do meio da Pokébola */
+.pokeball-spinner::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centraliza perfeitamente */
+
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  border: 3px solid #333;
+  border-radius: 50%;
+}
+
+/* 3. As Animações */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+  }
+}
