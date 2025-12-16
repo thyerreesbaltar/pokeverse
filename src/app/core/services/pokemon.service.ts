@@ -35,7 +35,7 @@ export class PokemonService {
   getPokemon(idPokemon: number){
     const pokemon$ = this.httpClient.get(`${this.urlPokeAPI}/pokemon/${idPokemon}`)
     const pokemonSpecies$ = this.httpClient.get(`${this.urlPokeAPI}/pokemon-species/${idPokemon}`)
-    // https://pokeapi.co/api/v2/evolution-chain/1
+
     return forkJoin({
       pokemon: pokemon$,
       pokemonSpecie: pokemonSpecies$

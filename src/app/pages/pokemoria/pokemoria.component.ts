@@ -6,6 +6,7 @@ import { embaralharArray, sortearNúmeroEntre } from '../../core/utils';
 import { timeInterval } from 'rxjs';
 import { TemporizadorComponent } from "../../components/temporizador/temporizador.component";
 import Swal from 'sweetalert2';
+import { LoadingComponent } from "../../components/loading/loading.component";
 
 interface CardPokemon {
   id?: number,
@@ -18,15 +19,17 @@ interface CardPokemon {
 @Component({
   selector: 'app-pokemoria',
   standalone: true,
-  imports: [ContainerComponent, NgClass, TemporizadorComponent],
+  imports: [ContainerComponent, NgClass, TemporizadorComponent, LoadingComponent],
   templateUrl: './pokemoria.component.html',
   styleUrl: './pokemoria.component.scss',
 })
 export class PokemoriaComponent implements OnInit {
-  jogoIniciado = signal<boolean>(false)
+  loading = signal<boolean>(false)
+
   tempo = 1000
+
+  jogoIniciado = signal<boolean>(false)
   tempoJogoAcabou= signal<boolean>(false)
-  // virarcarta = signal<boolean>(false);
   jogoFinalizado = signal<boolean>(false)
 
   quantidadeCartas = signal<number>(8);
@@ -45,11 +48,19 @@ export class PokemoriaComponent implements OnInit {
   })
 
   ngOnInit(): void {
+    this.loading.set(true)
+
     this.gerarPokemonsSorteados();
 
     this.preencherArrayBaralhoCardPokemon();
+    this.loadingActive()
   }
+  loadingActive() {
+        setTimeout(() => {
+          this.loading.set(false)
 
+        }, 500);
+  }
   gerarPokemonsSorteados() {
     for (let i = 0; i < this.quantidadeCartas(); i++) {
       this.pokemonSorteados.update((pokemon) => [
@@ -72,7 +83,7 @@ export class PokemoriaComponent implements OnInit {
       return cardCriado;
     });
 
-    if (this.baralhoCardsPokemon().length == 8) {
+    if (this.baralhoCardsPokemon().length == this.quantidadeCartas()) {
       this.baralhoCardsPokemon.update((cards: CardPokemon[]) => {
         const baralhoCard: CardPokemon[] = cards
           .map((card) => [card, card])
@@ -157,7 +168,7 @@ export class PokemoriaComponent implements OnInit {
 
   partidaTerminou(){
         if(this.jogoFinalizado()){
-          if(this.quantidadeCombinacoesFeitas() === 8){
+          if(this.quantidadeCombinacoesFeitas() === this.quantidadeCartas()){
             this.alertResultadoFinalJogo(`Parabéns`, "Você revelou todas as combinações :)")
           }else if(this.tempoJogoAcabou()){
             this.alertResultadoFinalJogo(`Tempo Acabou`, "Infelizmente você não conseguiu revelar todas as combinações :(")
@@ -218,6 +229,7 @@ export class PokemoriaComponent implements OnInit {
   }
 
   resetComponent(){
+    this.loading.set(true)
     this.jogoIniciado.set(false)
     this.tempoJogoAcabou.set(false)
     this.jogoFinalizado.set(false)
@@ -227,5 +239,6 @@ export class PokemoriaComponent implements OnInit {
 
     this.gerarPokemonsSorteados()
     this.preencherArrayBaralhoCardPokemon()
+    this.loadingActive()
   }
 }

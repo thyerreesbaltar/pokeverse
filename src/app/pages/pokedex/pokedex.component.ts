@@ -42,7 +42,7 @@ export class PokedexComponent implements OnInit{
         setTimeout(() => {
           this.loading.set(false)
 
-        }, 1000);
+        }, 500);
       })
     ).subscribe({
       next: (value: any) => {
