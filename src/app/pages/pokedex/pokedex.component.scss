@@ -6,16 +6,22 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+      .loadingActive{
+   overflow: hidden;
+      }
         .list-pokemons {
             width: 70%;
             margin: 0 auto;
             display: flex;
             flex-wrap: wrap;
             gap: 16px;
-            // align-items: center;
             justify-content: center;
-            // padding: 0 auto;
         }
+      /* O Sentinela pode ser invisível, mas precisa ter altura */
+      .sentinel {
+        height: 20px;
+        width: 100%;
+      }
 
         .carregar-mais {
           margin: 80px 0;

@@ -1,3 +1,4 @@
+import { PokemonsInterface } from "./types/pokemon.interface"
 
   export function getPeso(peso: number){
     return peso/10
@@ -62,4 +63,8 @@ export function embaralharArray(meuArray: any[]): any[]{
   }
 
   return meuArray;
+}
+
+export function ordernarCrescenteArrayPokemon(pokemonArray: PokemonsInterface[]){
+  return pokemonArray.sort((a, b) => a.id - b.id)
 }

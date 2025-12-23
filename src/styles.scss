@@ -50,7 +50,9 @@ $pokeverse-theme: mat.define-theme((
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
+.no-scroll {
+  overflow: hidden;
+}
 .alert-title{
   color: #192124;
   font-family: "Pixelify Sans", sans-serif;

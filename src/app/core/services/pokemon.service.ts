@@ -11,8 +11,8 @@ export class PokemonService {
   private urlPokeAPI = environment.urlPokeApi
   constructor(private httpClient: HttpClient) { }
 
-  getListarPokemon(offSet: number): Observable<any>{
-    return this.httpClient.get(`${this.urlPokeAPI}/pokemon?limit=30&offset=${offSet}`).pipe(
+  getListarPokemon(offSet: number, limit: number): Observable<any>{
+    return this.httpClient.get(`${this.urlPokeAPI}/pokemon?limit=${limit}&offset=${offSet}`).pipe(
       switchMap((value: any) => {
         const next = value.next
         // 3. Cria um array de Observables, um para cada requisição de detalhe do pokémon
