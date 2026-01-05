@@ -1,6 +1,6 @@
 <div class="container-temporizador">
   @if(iniciar()){
-    <h2 class="tempo">Tempo: <span>{{ tempoRestante }}</span></h2>
+    <h2 class="tempo">Tempo: <span>{{ tempoRestante() }}</span></h2>
   }@else {
     <button (click)="iniciarTimer()">Iniciar</button>
   }

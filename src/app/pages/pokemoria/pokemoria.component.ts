@@ -3,7 +3,6 @@ import { Component, computed, inject, OnInit, signal } from '@angular/core';
 import { ContainerComponent } from '../../components/container/container.component';
 import { NgClass } from '../../../../node_modules/@angular/common';
 import { embaralharArray, sortearNúmeroEntre } from '../../core/utils';
-import { timeInterval } from 'rxjs';
 import { TemporizadorComponent } from "../../components/temporizador/temporizador.component";
 import Swal from 'sweetalert2';
 import { LoadingComponent } from "../../components/loading/loading.component";
@@ -26,13 +25,13 @@ interface CardPokemon {
 export class PokemoriaComponent implements OnInit {
   loading = signal<boolean>(false)
 
-  tempo = 1000
-
+  tempo = signal<number>(60)
+  nivel =signal<number>(1)
   jogoIniciado = signal<boolean>(false)
   tempoJogoAcabou= signal<boolean>(false)
   jogoFinalizado = signal<boolean>(false)
 
-  quantidadeCartas = signal<number>(8);
+  quantidadeCartas = signal<number>(8);//nivel 1 = 8 / nivel 2 = 12 / nivel 3 = 16
 
   pokemonService = inject(PokemonService);
 
@@ -55,6 +54,7 @@ export class PokemoriaComponent implements OnInit {
     this.preencherArrayBaralhoCardPokemon();
     this.loadingActive()
   }
+
   loadingActive() {
         setTimeout(() => {
           this.loading.set(false)
@@ -68,6 +68,7 @@ export class PokemoriaComponent implements OnInit {
         ...pokemon,
       ]);
     }
+    
   }
 
   sortearPokemon(): number {
@@ -88,13 +89,16 @@ export class PokemoriaComponent implements OnInit {
         const baralhoCard: CardPokemon[] = cards
           .map((card) => [card, card])
           .flat();
+
         const cardsEmbaralhado = this.embalharCard(baralhoCard);
 
         return cardsEmbaralhado;
       });
     }
 
-    if(this.baralhoCardsPokemon().length == 16){
+    if(this.baralhoCardsPokemon().length == (this.quantidadeCartas() * 2)){
+      console.log(this.baralhoCardsPokemon())
+
       this.baralhoCardsPokemon.update((cards: CardPokemon[]) => {
         return cards.map((card: CardPokemon, $index)=> {
           return {
@@ -103,6 +107,7 @@ export class PokemoriaComponent implements OnInit {
           }
         })
       })
+      console.log(this.baralhoCardsPokemon())
     }
   }
   criarCardPokemon(pokemonId: number): CardPokemon {
@@ -169,7 +174,10 @@ export class PokemoriaComponent implements OnInit {
   partidaTerminou(){
         if(this.jogoFinalizado()){
           if(this.quantidadeCombinacoesFeitas() === this.quantidadeCartas()){
-            this.alertResultadoFinalJogo(`Parabéns`, "Você revelou todas as combinações :)")
+
+
+              this.alertResultadoFinalJogo(`Parabéns`, "Você revelou todas as combinações :)")
+       
           }else if(this.tempoJogoAcabou()){
             this.alertResultadoFinalJogo(`Tempo Acabou`, "Infelizmente você não conseguiu revelar todas as combinações :(")
           }
@@ -182,7 +190,7 @@ export class PokemoriaComponent implements OnInit {
 
       text,
 
-      confirmButtonText: "Jogar novamente",
+      confirmButtonText:this.nivel() < 3 && !this.tempoJogoAcabou()? "Proximo nível" : "Jogar novamente",
       cancelButtonText: "Por hoje é só",
       showConfirmButton: true,
       showCancelButton: true,
@@ -192,7 +200,20 @@ export class PokemoriaComponent implements OnInit {
       }
       });
 
+      
+
       if(resultado.isConfirmed){
+        if(this.nivel() < 3 && !this.tempoJogoAcabou()){
+          this.nivel.update(value => value + 1)
+          this.quantidadeCartas.update(value => value + 4)
+          this.tempo.update(value => value + 15) 
+        }else {
+          this.tempo.set(60) 
+
+          this.nivel.set(1)
+          this.quantidadeCartas.set(8)
+        }
+        
         this.resetComponent()
       }
   }
@@ -229,6 +250,7 @@ export class PokemoriaComponent implements OnInit {
   }
 
   resetComponent(){
+
     this.loading.set(true)
     this.jogoIniciado.set(false)
     this.tempoJogoAcabou.set(false)

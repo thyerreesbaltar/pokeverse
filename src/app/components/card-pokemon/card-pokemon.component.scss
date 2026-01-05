@@ -1,4 +1,4 @@
-@use '../../../styles/vars.scss';
+@use "../../../styles/vars.scss";
 :host {
     .card-pokemon-container {
         width: 28vw;
@@ -6,7 +6,7 @@
         max-width: 140px;
         max-height: 172px;
 
-        background-color: rgba($color: #C6C6C6, $alpha: 0.3);
+        background-color: rgba($color: #c6c6c6, $alpha: 0.3);
 
         cursor: pointer;
 
@@ -20,13 +20,12 @@
         -webkit-box-shadow: 0px 0px 6px 1px rgba($color: #525252, $alpha: 0.75);
         -moz-box-shadow: 0px 0px 6px 1px rgba($color: #525252, $alpha: 0.75);
 
-        &:hover{
+        &:hover {
             transition: 0.5s;
-            background-color: rgba($color: #C6C6C6, $alpha: 0.6);
+            background-color: rgba($color: #c6c6c6, $alpha: 0.6);
             box-shadow: 0px 0px 6px 1px rgba($color: #343434, $alpha: 0.75);
             -webkit-box-shadow: 0px 0px 6px 1px rgba($color: #343434, $alpha: 0.75);
             -moz-box-shadow: 0px 0px 6px 1px rgba($color: #343434, $alpha: 0.75);
-
         }
         .card-pokemon-image {
             position: absolute;
@@ -50,23 +49,20 @@
                 font-size: 1.3em;
                 color: #343434;
             }
-
+        }
     }
-  }
-  @media screen and (max-width: 378px) {
-  .card-pokemon-container {
-    // box-sizing: border-box;
-    width: 80vw;
 
-    max-width: 260px;
-       .card-pokemon-descricao{
-        position: relative;
-        margin: 0;
-        margin-top: 52%;
-        // top: 0;
-        bottom: 20%;
-       }
+    @media screen and (max-width: 378px) {
+        .card-pokemon-container {
+            width: 80vw;
 
-  }
-  }
+            max-width: 260px;
+            .card-pokemon-descricao {
+                position: relative;
+                margin: 0;
+                margin-top: 52%;
+                bottom: 20%;
+            }
+        }
+    }
 }

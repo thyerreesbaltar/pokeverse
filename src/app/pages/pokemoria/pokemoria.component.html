@@ -2,8 +2,12 @@
   <main>
     <h2>Jogo da memório <span class="text-pokemon">Pokemon</span></h2>
 
-    <app-temporizador [iniciar]="jogoIniciado()" [terminouJogo]="jogoFinalizado()" (iniciadoJogo)="iniciarJogo($event)" (tempoFinalizado)="tempoAcabou($event)"/>
-    <section class="conteiner-jogo-memoria">
+    <app-temporizador [tempoRestante]="tempo()" [iniciar]="jogoIniciado()" [terminouJogo]="jogoFinalizado()" (iniciadoJogo)="iniciarJogo($event)" (tempoFinalizado)="tempoAcabou($event)"/>
+    <section class="conteiner-jogo-memoria" [ngClass]="{
+      'nivel-1': nivel() == 1,
+      'nivel-2': nivel() == 2,
+      'nivel-3': nivel() == 3,
+    }">
       @for (cardPokemon of baralhoCardsPokemon(); track cardPokemon.id) {
       <div
         class="card scene"

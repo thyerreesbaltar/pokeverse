@@ -14,12 +14,11 @@ export class TemporizadorComponent implements OnDestroy{
 
   iniciar = model.required<boolean>()
   terminouJogo = input.required<boolean>()
-  tempoRestante: number = 0;
+  tempoRestante = model.required<number>();
 
   private subscription: Subscription | undefined;
 
   iniciarTimer() {
-    this.tempoRestante = 60 // Começa com 60 segundos
     
     this.iniciar.set(true)
 
@@ -29,8 +28,8 @@ export class TemporizadorComponent implements OnDestroy{
 
     // Se inscreve no evento
     this.subscription = timer$.subscribe(() => {
-      if (this.tempoRestante > 0) {
-        this.tempoRestante--;
+      if (this.tempoRestante() > 0) {
+        this.tempoRestante.update(value => value - 1);
       } else {
         this.pararTimer(); // Opcional: ação ao acabar
         this.tempoFinalizado.emit(true)
