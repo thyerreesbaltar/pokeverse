@@ -1,5 +1,4 @@
 import { Component, inject, signal } from '@angular/core';
-import { ContainerComponent } from '../../components/container/container.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import {
   FormBuilder,
@@ -8,11 +7,15 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import Swal from 'sweetalert2';
+import { finalize } from 'rxjs';
 import {
   NgClass,
   TitleCasePipe,
 } from '../../../../node_modules/@angular/common';
+
 import { PokemonService } from '../../core/services/pokemon.service';
+
 import {
   getPeso,
   getAltura,
@@ -21,9 +24,11 @@ import {
   sortearNúmeroEntre,
 } from '../../core/utils';
 import { TypePokemon } from '../../core/types/type-pokemon';
-import Swal from 'sweetalert2';
-import { finalize } from 'rxjs';
+
+
 import { LoadingComponent } from '../../components/loading/loading.component';
+import { ContainerComponent } from '../../components/container/container.component';
+
 @Component({
   selector: 'app-qual-pokemon',
   standalone: true,

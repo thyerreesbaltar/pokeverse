@@ -10,5 +10,5 @@ import { Component, Input } from '@angular/core';
 export class BarraPreenchimentoComponent {
   @Input() larguraDaBarra: number = 0
   @Input() backgroundColor: string = ""
-
+  @Input() alturaDaBarra: number = 8
 }

@@ -33,7 +33,6 @@ import { ordernarCrescenteArrayPokemon } from '../../core/utils';
 export class PokedexComponent implements OnInit {
   //Att futura:
   // Guardar dados em cache
-  // Carregamento por Scrolling
   // Internacionalização com i18n
   pokemonService = inject(PokemonService);
   openModalPokemon: boolean = false;
@@ -64,7 +63,7 @@ export class PokedexComponent implements OnInit {
         next: (value: any) => {
           this.fullListaPokemon = value;
           this.simplificarDadosDePokemonsNaLista();
-          this.listPokemon.set(    ordernarCrescenteArrayPokemon(this.listPokemon()))
+          this.listPokemon.set(ordernarCrescenteArrayPokemon(this.listPokemon()))
 
         },
         error: (err) => {
@@ -87,7 +86,7 @@ export class PokedexComponent implements OnInit {
     });
   }
 
-  removerDadosDuplicados() {}
+  removerDadosDuplicados() { }
   openModalpokemon(idPokemon: number) {
     this.openModalPokemon = !this.openModalPokemon;
     this.pokemonSelectedOpenModal = idPokemon;
@@ -103,7 +102,7 @@ export class PokedexComponent implements OnInit {
     this.loading.set(true);
 
     this.offSet += this.limit;
-    console.log(this.offSet);
+
     this.getListaPokemon(this.offSet, this.limit);
   }
 }

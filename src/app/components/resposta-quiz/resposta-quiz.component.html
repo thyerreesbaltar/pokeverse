@@ -1,0 +1,11 @@
+<div>
+
+    <button class="card-front-background" [ngClass]="{
+        'correto': (apresentarResultado() && apresentarRespostaCorreta()),
+         'errou': apresentarResultado() && apresentarRespostaErrada()
+    }" type="button" (click)="escolherResposta(resposta())">
+        <div class="card">
+            <img [src]="imagemPokemon()">
+        </div>
+    </button>
+</div>

@@ -26,9 +26,9 @@ export class PokemoriaComponent implements OnInit {
   loading = signal<boolean>(false)
 
   tempo = signal<number>(60)
-  nivel =signal<number>(1)
+  nivel = signal<number>(1)
   jogoIniciado = signal<boolean>(false)
-  tempoJogoAcabou= signal<boolean>(false)
+  tempoJogoAcabou = signal<boolean>(false)
   jogoFinalizado = signal<boolean>(false)
 
   quantidadeCartas = signal<number>(8);//nivel 1 = 8 / nivel 2 = 12 / nivel 3 = 16
@@ -56,10 +56,10 @@ export class PokemoriaComponent implements OnInit {
   }
 
   loadingActive() {
-        setTimeout(() => {
-          this.loading.set(false)
+    setTimeout(() => {
+      this.loading.set(false)
 
-        }, 500);
+    }, 500);
   }
   gerarPokemonsSorteados() {
     for (let i = 0; i < this.quantidadeCartas(); i++) {
@@ -68,7 +68,7 @@ export class PokemoriaComponent implements OnInit {
         ...pokemon,
       ]);
     }
-    
+
   }
 
   sortearPokemon(): number {
@@ -96,18 +96,16 @@ export class PokemoriaComponent implements OnInit {
       });
     }
 
-    if(this.baralhoCardsPokemon().length == (this.quantidadeCartas() * 2)){
-      console.log(this.baralhoCardsPokemon())
+    if (this.baralhoCardsPokemon().length == (this.quantidadeCartas() * 2)) {
 
       this.baralhoCardsPokemon.update((cards: CardPokemon[]) => {
-        return cards.map((card: CardPokemon, $index)=> {
+        return cards.map((card: CardPokemon, $index) => {
           return {
             id: $index,
             ...card
           }
         })
       })
-      console.log(this.baralhoCardsPokemon())
     }
   }
   criarCardPokemon(pokemonId: number): CardPokemon {
@@ -131,8 +129,8 @@ export class PokemoriaComponent implements OnInit {
     this.baralhoCardsPokemon.update((cards: CardPokemon[]) => {
       let combincaoEncontrada = false
       const attCards = cards.map((card) => {
-        if(card.id !== idCard){
-          if(card.numero === this.baralhoCardsPokemon()[idCard].numero && card.faceParaCima){
+        if (card.id !== idCard) {
+          if (card.numero === this.baralhoCardsPokemon()[idCard].numero && card.faceParaCima) {
             card.combinacaoEncontrada = true
             combincaoEncontrada = true
           }
@@ -140,7 +138,7 @@ export class PokemoriaComponent implements OnInit {
 
         return card
       })
-      if(combincaoEncontrada){
+      if (combincaoEncontrada) {
         attCards[idCard].combinacaoEncontrada = true
         combincaoEncontrada = false
         this.quantidadeCombinacoesFeitas.update(value => value + 1)
@@ -150,11 +148,11 @@ export class PokemoriaComponent implements OnInit {
       return attCards
     })
   }
-  iniciarJogo(iniciarJogo: boolean){
+  iniciarJogo(iniciarJogo: boolean) {
     this.jogoIniciado.set(iniciarJogo)
   }
 
-  tempoAcabou(tempoAcabou: boolean){
+  tempoAcabou(tempoAcabou: boolean) {
     this.tempoJogoAcabou.set(tempoAcabou)
     this.verificarJogoCompletado()
 
@@ -165,23 +163,23 @@ export class PokemoriaComponent implements OnInit {
   }
 
   verificarJogoCompletado() {
-    if(this.tempoJogoAcabou() || this.quantidadeCombinacoesFeitas() === this.quantidadeCartas()){
+    if (this.tempoJogoAcabou() || this.quantidadeCombinacoesFeitas() === this.quantidadeCartas()) {
       this.jogoFinalizado.set(true)
       this.partidaTerminou()
     }
   }
 
-  partidaTerminou(){
-        if(this.jogoFinalizado()){
-          if(this.quantidadeCombinacoesFeitas() === this.quantidadeCartas()){
+  partidaTerminou() {
+    if (this.jogoFinalizado()) {
+      if (this.quantidadeCombinacoesFeitas() === this.quantidadeCartas()) {
 
 
-              this.alertResultadoFinalJogo(`Parabéns`, "Você revelou todas as combinações :)")
-       
-          }else if(this.tempoJogoAcabou()){
-            this.alertResultadoFinalJogo(`Tempo Acabou`, "Infelizmente você não conseguiu revelar todas as combinações :(")
-          }
-        }
+        this.alertResultadoFinalJogo(`Parabéns`, "Você revelou todas as combinações :)")
+
+      } else if (this.tempoJogoAcabou()) {
+        this.alertResultadoFinalJogo(`Tempo Acabou`, "Infelizmente você não conseguiu revelar todas as combinações :(")
+      }
+    }
   }
 
   async alertResultadoFinalJogo(title: string, text: string) {
@@ -190,7 +188,7 @@ export class PokemoriaComponent implements OnInit {
 
       text,
 
-      confirmButtonText:this.nivel() < 3 && !this.tempoJogoAcabou()? "Proximo nível" : "Jogar novamente",
+      confirmButtonText: this.nivel() < 3 && !this.tempoJogoAcabou() ? "Proximo nível" : "Jogar novamente",
       cancelButtonText: "Por hoje é só",
       showConfirmButton: true,
       showCancelButton: true,
@@ -198,41 +196,40 @@ export class PokemoriaComponent implements OnInit {
       customClass: {
         title: 'alert-title'
       }
-      });
+    });
 
-      
 
-      if(resultado.isConfirmed){
-        if(this.nivel() < 3 && !this.tempoJogoAcabou()){
-          this.nivel.update(value => value + 1)
-          this.quantidadeCartas.update(value => value + 4)
-          this.tempo.update(value => value + 15) 
-        }else {
-          this.tempo.set(60) 
 
-          this.nivel.set(1)
-          this.quantidadeCartas.set(8)
-        }
-        
-        this.resetComponent()
+    if (resultado.isConfirmed) {
+      if (this.nivel() < 3 && !this.tempoJogoAcabou()) {
+        this.nivel.update(value => value + 1)
+        this.quantidadeCartas.update(value => value + 4)
+        this.tempo.update(value => value + 15)
+      } else {
+        this.tempo.set(60)
+
+        this.nivel.set(1)
+        this.quantidadeCartas.set(8)
       }
-  }
-  toggleFlip(idCard: number| undefined) {
-    if(idCard !== undefined && !this.jogoFinalizado()){
 
-      if(this.isPossibleFlip()){
+      this.resetComponent()
+    }
+  }
+  toggleFlip(idCard: number | undefined) {
+    if (idCard !== undefined && !this.jogoFinalizado()) {
+
+      if (this.isPossibleFlip()) {
         this.baralhoCardsPokemon.update((cards: CardPokemon[]) => {
           return cards.map(card => {
-            if(card.id === idCard){
+            if (card.id === idCard) {
               card.faceParaCima = !card.faceParaCima
             }
             return card
           })
         })
 
-        if(this.quantidadeCardFaceParaCima() === 2){
+        if (this.quantidadeCardFaceParaCima() === 2) {
           this.verificarCombinacaoCartas(idCard)
-          console.log(this.baralhoCardsPokemon())
           this.verificarJogoCompletado()
           setTimeout(() => this.virarTodasCartasParaBaixo(), 1000)
         }
@@ -240,7 +237,7 @@ export class PokemoriaComponent implements OnInit {
     }
   }
 
-  virarTodasCartasParaBaixo(){
+  virarTodasCartasParaBaixo() {
     this.baralhoCardsPokemon.update((cards: CardPokemon[]) => {
       return cards.map(card => {
         card.faceParaCima = false
@@ -249,7 +246,7 @@ export class PokemoriaComponent implements OnInit {
     })
   }
 
-  resetComponent(){
+  resetComponent() {
 
     this.loading.set(true)
     this.jogoIniciado.set(false)

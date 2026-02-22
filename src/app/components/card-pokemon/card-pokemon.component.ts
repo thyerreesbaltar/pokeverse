@@ -15,8 +15,8 @@ export class CardPokemonComponent implements OnInit{
   pokemon = input.required<PokemonsInterface>()
   pokeImage:string = ``
   private pokemonService = inject(PokemonService)
+  
   ngOnInit(): void {
     this.pokeImage = this.pokemonService.getImagePokemon(this.pokemon().id)
-
   }
 }

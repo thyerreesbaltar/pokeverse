@@ -2,9 +2,6 @@
     <figure class="card-pokemon-image"><img [src]="pokeImage" [alt]="pokemon().name"></figure>
     <div class="card-pokemon-descricao">
         <span class="name-pokemon">{{ pokemon().name | titlecase}}</span>
-
-
           <app-tipo-pokemon [tipos]="pokemon().types"></app-tipo-pokemon>
-
     </div>
 </div>

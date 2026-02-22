@@ -1,0 +1,49 @@
+<app-container>
+    <main>
+
+        <div class="title">
+            <h1 class="text-pokemon">PokéQuiz</h1>
+
+        </div>
+        <section class="quiz-container">
+            @for (item of quiz(); let i = $index;track item.id) {
+            @if(perguntaAtual() === i){
+            <div class="perguntas">
+                <div class="score-badge">Pergunta: {{ perguntaAtual() + 1 }}/{{ quiz().length}}</div>
+                <span>{{ item.pergunta }}</span>
+            </div>
+            <form [formGroup]="quizForm">
+                <div class="respostas">
+
+                    @for (resposta of item.respostas; let j = $index ;track resposta) {
+                    <app-resposta-quiz [idPergunta]="item.id" [resultadoQuiz]="resultadosQuiz()" [resposta]="resposta"
+                        (respostaSelecionada)="inserirRespostaNoForm($event, i, item.id)"></app-resposta-quiz>
+                    }
+                </div>
+            </form>
+            }
+            }
+
+
+            @if(resultadosQuiz().length > 0){
+            <div class="button-actions">
+
+                @if(perguntaAtual() > 0){
+                <button (click)="perguntaAnterior()" class="anterior">Anterior</button>
+                }
+                @if(perguntaAtual() == quiz().length - 1){
+                <button (click)="resetComponent()" class="seguinte">Jogar Novamente</button>
+
+                }@else {
+                <button (click)="proximaPergunta()" class="seguinte">Proximo</button>
+
+                }
+            </div>
+            }
+        </section>
+    </main>
+</app-container>
+
+@if(loading()){
+<app-loading></app-loading>
+}

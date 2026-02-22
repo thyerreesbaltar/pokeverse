@@ -1,0 +1,95 @@
+@use "../../../styles/vars.scss";
+:host {
+    main {
+        margin-top: 48px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        h1 {
+            font-size: 4em;
+        }
+
+        section {
+            margin-top: 28px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 28px;
+            .perguntas {
+                span {
+                    font-family: vars.$font-primaria;
+                    font-size: 1.5em;
+                    display: block;
+
+                    margin-bottom: 12px;
+                }
+                .barra-progressao {
+                    margin: 0 auto;
+                    height: 12px;
+                    max-width: 460px;
+                }
+            }
+            form {
+                .respostas {
+                    display: flex;
+                    gap: 24px;
+                    button {
+                        height: 260px;
+                        width: 220px;
+                        .card {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 100%;
+                            height: 100%;
+                            img {
+                                height: 180px;
+                                width: 180px;
+                            }
+                        }
+
+                        &.correto {
+                            border: green 6px solid;
+                        }
+
+                        &.errou {
+                            border: red 6px solid;
+                        }
+                        &.card-front-background {
+                            background-image: url("../../../assets/Gemini_Generated_Image_zii5huzii5huzii5.png");
+                            background-position: center;
+                            background-size: 100% 100%;
+                            background-repeat: no-repeat;
+                        }
+                    }
+                }
+            }
+
+            div.button-actions {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 32px;
+                button {
+                    width: 160px;
+                    height: 60px;
+                    background-color: burlywood;
+                    border-radius: 12px;
+
+                    font-size: 18px;
+                    font-family: vars.$font-primaria;
+                    font-weight: bold;
+                    color: #e7e5e5;
+                    &.anterior {
+                        background-color: rgba(242, 194, 48, 0.8);
+                    }
+                    &.seguinte {
+                        background-color: #368abf;
+                    }
+                }
+            }
+        }
+    }
+}

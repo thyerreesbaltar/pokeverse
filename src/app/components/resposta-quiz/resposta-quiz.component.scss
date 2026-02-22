@@ -1,0 +1,36 @@
+:host {
+    div {
+          button {
+                        height: 260px;
+                        width: 220px;
+                        .card{
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 100%;
+                            height: 100%;
+                            img {
+                                height: 180px;
+                                width: 180px;
+                            }
+                        }
+
+                        &.correto {
+                            border: green 4px solid;
+                            border-radius: 8px;
+                        }
+
+                        &.errou{
+                            border-radius: 8px;
+                            border: red 4px solid;
+                        }
+                        
+                        &.card-front-background{
+                            background-image: url('../../../assets/Gemini_Generated_Image_zii5huzii5huzii5.png');
+                            background-position: center;
+                            background-size: 100% 100%;
+                            background-repeat: no-repeat;
+                        }
+                    }
+    }
+}

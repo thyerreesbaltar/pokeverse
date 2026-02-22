@@ -14,10 +14,7 @@
 </app-container>
 
 @if (openModalPokemon) {
-<app-modal-pokemon
-  (fecharModal)="openModalPokemon = $event"
-  [idPokemon]="pokemonSelectedOpenModal"
-></app-modal-pokemon>
+<app-modal-pokemon (fecharModal)="openModalPokemon = $event" [idPokemon]="pokemonSelectedOpenModal"></app-modal-pokemon>
 } @if(loading()){
 <app-loading></app-loading>
 }

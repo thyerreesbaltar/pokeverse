@@ -1,63 +1,57 @@
-@use '../../../styles/vars.scss';
+@use "../../../styles/vars.scss";
 
 :host {
   header {
-        background-color: #3A468C;
-        padding: 8px 0;
-        .header {
-        height: 80px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        .logo {
-            img {
-                width: 158px;
-                height: 158px;
-            }
+    background-color: #3a468c;
+    padding: 8px 0;
+    .header {
+      height: 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .logo {
+        img {
+          width: 158px;
+          height: 158px;
         }
+      }
 
-        nav {
+      nav {
+        height: 100%;
+        ul {
+          height: 100%;
+
+          display: flex;
+          justify-content: space-around;
+          gap: 16px;
+          align-items: center;
+          li {
             height: 100%;
-            ul {
-                height: 100%;
-
-                display: flex;
-                justify-content: space-around;
-                gap: 16px;
-                align-items: center;
-                li {
-                    height: 100%;
-                    a {
-                        // cursor: pointer;
-
-                        display: flex;
-                        align-items: center;
-                        height: 100%;
-                        color: #E9F9F5;
-                        font-family: vars.$font-primaria;
-                        font-weight: 600;
-                        padding: 0 16px;
-                        font-size: 18px;
-                        &:hover{
-
-                            span {
-
-                                transform: scale(1.1);
-                                border-bottom: 2px solid #E9F9F5;
-                                transition: .8s;
-
-
-                            }
-                        }
-                    }
+            a {
+              display: flex;
+              align-items: center;
+              height: 100%;
+              color: #e9f9f5;
+              font-family: vars.$font-primaria;
+              font-weight: 600;
+              padding: 0 16px;
+              font-size: 18px;
+              &:hover {
+                span {
+                  transform: scale(1.1);
+                  border-bottom: 2px solid #e9f9f5;
+                  transition: 0.8s;
                 }
+              }
             }
+          }
         }
+      }
     }
   }
 
   @media screen and (max-width: 378px) {
-    header{
+    header {
       padding: 0;
       .header {
         height: 100px;
@@ -80,6 +74,7 @@
 
           top: 58%;
           left: 53%;
+
           /* 3. Ajusta o ponto de alinhamento para o centro do elemento */
           transform: translate(-50%, -50%);
           width: 95%;
@@ -89,7 +84,7 @@
             max-height: 20%;
             flex-direction: column;
             justify-content: space-around;
-            background: #F8F8F8;
+            background: #f8f8f8;
             align-items: self-start;
             border-radius: 8px;
             padding: 16px;
@@ -98,19 +93,15 @@
               height: 30px;
               a {
                 align-items: center;
-                color: #3A468C;
+                color: #3a468c;
 
-                          &:hover{
-
-                            span {
-
-                                transform: none;
-                                border-bottom: none;
-                                transition: none;
-
-
-                            }
-                        }
+                &:hover {
+                  span {
+                    transform: none;
+                    border-bottom: none;
+                    transition: none;
+                  }
+                }
               }
             }
           }
@@ -120,11 +111,9 @@
           background-color: transparent;
           img {
             height: 42px;
-
           }
         }
       }
     }
   }
 }
-

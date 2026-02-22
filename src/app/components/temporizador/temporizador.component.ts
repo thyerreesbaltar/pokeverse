@@ -8,7 +8,7 @@ import { interval, Subscription } from 'rxjs';
   templateUrl: './temporizador.component.html',
   styleUrl: './temporizador.component.scss'
 })
-export class TemporizadorComponent implements OnDestroy{
+export class TemporizadorComponent implements OnDestroy {
   iniciadoJogo = output<boolean>()
   tempoFinalizado = output<boolean>()
 
@@ -19,7 +19,7 @@ export class TemporizadorComponent implements OnDestroy{
   private subscription: Subscription | undefined;
 
   iniciarTimer() {
-    
+
     this.iniciar.set(true)
 
     this.iniciadoJogo.emit(this.iniciar())
@@ -34,7 +34,7 @@ export class TemporizadorComponent implements OnDestroy{
         this.pararTimer(); // Opcional: ação ao acabar
         this.tempoFinalizado.emit(true)
       }
-      if(this.terminouJogo()){
+      if (this.terminouJogo()) {
         this.pararTimer(); // Opcional: ação ao acabar
       }
     });

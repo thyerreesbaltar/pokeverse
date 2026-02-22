@@ -1,0 +1,485 @@
+{
+    "questoes": 
+        [
+            {
+        "id": 1,
+        "pergunta": "Qual destes Pokémon é do tipo Fogo?",
+        "respostas": [7, 1, 4, 10],
+        "respostaCorreta": 4
+    },
+    {
+        "id": 2,
+        "pergunta": "Qual Pokémon é conhecido como o 'Rato Elétrico'?",
+        "respostas": [25, 26, 172, 133],
+        "respostaCorreta": 25
+    },
+    {
+        "id": 3,
+        "pergunta": "Qual é a evolução final do Bulbasaur?",
+        "respostas": [1, 2, 3, 6],
+        "respostaCorreta": 3
+    },
+    {
+        "id": 4,
+        "pergunta": "Qual destes é um Pokémon Lendário da região de Kanto?",
+        "respostas": [143, 150, 149, 131],
+        "respostaCorreta": 150
+    },
+    {
+        "id": 5,
+        "pergunta": "Qual Pokémon evolui para Arcanine usando uma Pedra do Fogo?",
+        "respostas": [37, 58, 77, 126],
+        "respostaCorreta": 58
+    },
+    {
+        "id": 6,
+        "pergunta": "Qual foi o pokemon inicial escolhido por Gary?",
+        "respostas": [1, 4, 7, 25],
+        "respostaCorreta": 7
+    },
+    {
+        "id": 7,
+        "pergunta": "Qual destes Pokémon possui o tipo Psíquico?",
+        "respostas": [63, 66, 74, 92],
+        "respostaCorreta": 63
+    },
+    {
+        "id": 8,
+        "pergunta": "Qual Pokémon é a evolução de Magikarp?",
+        "respostas": [129, 130, 131, 134],
+        "respostaCorreta": 130
+    },
+    {
+        "id": 9,
+        "pergunta": "Qual destes Pokémon é do tipo Fantasma/Veneno?",
+        "respostas": [92, 95, 104, 108],
+        "respostaCorreta": 92
+    },
+    {
+        "id": 10,
+        "pergunta": "Qual é a evolução de Eevee do tipo Água?",
+        "respostas": [135, 136, 134, 196],
+        "respostaCorreta": 134
+    },
+    {
+        "id": 11,
+        "pergunta": "Qual destes Pokémon é imune a ataques do tipo Elétrico?",
+        "respostas": [17, 54, 27, 120],
+        "respostaCorreta": 27
+    },
+    {
+        "id": 12,
+        "pergunta": "Quem é o guardião dos mares em Johto?",
+        "respostas": [249, 250, 382, 484],
+        "respostaCorreta": 249
+    },
+    {
+        "id": 13,
+        "pergunta": "Qual é o inicial de Planta da região de Johto?",
+        "respostas": [1, 152, 252, 387],
+        "respostaCorreta": 152
+    },
+    {
+        "id": 14,
+        "pergunta": "Qual destes Pokémons torna-se extremamente agressivo ao ver a cor vermelha?",
+        "respostas": [95, 123, 125, 126],
+        "respostaCorreta": 123
+    },
+    {
+        "id": 15,
+        "pergunta": "Qual Pokémon é conhecido como o 'Rei dos Carpas'?",
+        "respostas": [118, 119, 129, 223],
+        "respostaCorreta": 129
+    },
+    {
+        "id": 16,
+        "pergunta": "Qual destes Pokémon é do tipo Dragão puro na primeira geração?",
+        "respostas": [147, 6, 130, 142],
+        "respostaCorreta": 147
+    },
+    {
+        "id": 17,
+        "pergunta": "Qual Pokémon lendário representa o tempo?",
+        "respostas": [483, 484, 487, 493],
+        "respostaCorreta": 483
+    },
+    {
+        "id": 18,
+        "pergunta": "Qual é o Pokémon número 100 na Pokédex?",
+        "respostas": [99, 100, 101, 102],
+        "respostaCorreta": 100
+    },
+    {
+        "id": 19,
+        "pergunta": "Qual destes Pokémon é a última evolução de Togepi?",
+        "respostas": [45, 176, 468, 35],
+        "respostasCorreta": 468
+    },
+    {
+        "id": 20,
+        "pergunta": "Qual é o inicial de Fogo da região de Hoenn?",
+        "respostas": [4, 155, 255, 390],
+        "respostaCorreta": 255
+    },
+    {
+        "id": 21,
+        "pergunta": "Qual Pokémon é a contraparte de Kyogre?",
+        "respostas": [383, 384, 249, 150],
+        "respostaCorreta": 383
+    },
+    {
+        "id": 22,
+        "pergunta": "Qual destes Pokémons não é do tipo Fada?",
+        "respostas": [35, 113, 175, 700],
+        "respostaCorreta": 113
+    },
+    {
+        "id": 23,
+        "pergunta": "Qual é a pré-evolução do Lucario?",
+        "respostas": [447, 448, 236, 231],
+        "respostaCorreta": 447
+    },
+    {
+        "id": 24,
+        "pergunta": "Qual Pokémon é o 'Deus' do universo Pokémon?",
+        "respostas": [150, 249, 493, 384],
+        "respostaCorreta": 493
+    },
+    {
+        "id": 25,
+        "pergunta": "Qual dos seguintes pokemons é do tipo fantasma?",
+        "respostas": [6, 23, 8, 200],
+        "respostaCorreta": 94
+    },
+    {
+        "id": 26,
+        "pergunta": "Qual destes Pokémons não é um fóssil de Kanto?",
+        "respostas": [138, 142, 140, 131],
+        "respostaCorreta": 138
+    },
+    {
+        "id": 27,
+        "pergunta": "Qual é a evolução do Scyther que é do tipo Inseto/Aço?",
+        "respostas": [123, 212, 95, 208],
+        "respostaCorreta": 212
+    },
+    {
+        "id": 28,
+        "pergunta": "Qual Pokémon é famoso por cantar para fazer os outros dormirem?",
+        "respostas": [35, 39, 40, 174],
+        "respostaCorreta": 39
+    },
+    {
+        "id": 29,
+        "pergunta": "Qual destes é o inicial de Água de Sinnoh?",
+        "respostas": [7, 158, 258, 393],
+        "respostaCorreta": 393
+    },
+    {
+        "id": 30,
+        "pergunta": "Qual Pokémon lendário voa continuamente pelo mundo de Hoenn após a liga?",
+        "respostas": [380, 382, 384, 144],
+        "respostaCorreta": 380
+    },
+    {
+        "id": 31,
+        "pergunta": "Qual destes Pokémon é a evolução de Sneasel?",
+        "respostas": [215, 461, 471, 470],
+        "respostaCorreta": 461
+    },
+    {
+        "id": 32,
+        "pergunta": "Qual dos seguintes Pokémons é lendário na região de Hoenn?",
+        "respostas": [384, 149, 330, 373],
+        "respostaCorreta": 384
+    },
+    {
+        "id": 33,
+        "pergunta": "Qual Pokémon é conhecido por carregar um osso?",
+        "respostas": [104, 141, 115, 122],
+        "respostaCorreta": 104
+    },
+    {
+        "id": 34,
+        "pergunta": "Qual é o Pokémon #001 na National Dex?",
+        "respostas": [1, 4, 7, 25],
+        "respostaCorreta": 1
+    },
+    {
+        "id": 35,
+        "pergunta": "Qual destes Pokémon é do tipo Gelo/Voador?",
+        "respostas": [144, 145, 146, 249],
+        "respostaCorreta": 144
+    },
+    {
+        "id": 36,
+        "pergunta": "Qual Pokémon evolui para Alakazam?",
+        "respostas": [63, 64, 65, 122],
+        "respostaCorreta": 64
+    },
+    {
+        "id": 37,
+        "pergunta": "Qual destes é a evolução de Slowpoke ao usar uma Pedra do Rei?",
+        "respostas": [79, 80, 199, 186],
+        "respostaCorreta": 199
+    },
+    {
+        "id": 38,
+        "pergunta": "Qual Pokémon é conhecido como o 'Pokémon Mãe'?",
+        "respostas": [113, 115, 124, 31],
+        "respostaCorreta": 115
+    },
+    {
+        "id": 39,
+        "pergunta": "Qual é o inicial de Planta de Alola?",
+        "respostas": [1, 152, 252, 722],
+        "respostaCorreta": 722
+    },
+    {
+        "id": 40,
+        "pergunta": "Qual destes Pokémon é um Ultra Beast?",
+        "respostas": [791, 792, 793, 800],
+        "respostaCorreta": 793
+    },
+    {
+        "id": 41,
+        "pergunta": "Qual Pokémon é a evolução de Gastly?",
+        "respostas": [92, 93, 94, 200],
+        "respostaCorreta": 93
+    },
+    {
+        "id": 42,
+        "pergunta": "Qual destes Pokémon é do tipo Noturno puro?",
+        "respostas": [197, 215, 228, 248],
+        "respostaCorreta": 197
+    },
+    {
+        "id": 43,
+        "pergunta": "Qual é o Pokémon lendário que representa a vida em Kalos?",
+        "respostas": [716, 717, 718, 251],
+        "respostaCorreta": 716
+    },
+    {
+        "id": 44,
+        "pergunta": "Qual Pokémon é a evolução de Machoke?",
+        "respostas": [66, 67, 68, 106],
+        "respostaCorreta": 68
+    },
+    {
+        "id": 45,
+        "pergunta": "Qual destes Pokémon é conhecido por mimetizar objetos?",
+        "respostas": [132, 185, 122, 100],
+        "respostaCorreta": 132
+    },
+    {
+        "id": 46,
+        "pergunta": "Qual é o tipo do lendário Zekrom?",
+        "respostas": [643, 644, 645, 646],
+        "respostaCorreta": 644
+    },
+    {
+        "id": 47,
+        "pergunta": "Qual destes Pokémon é um inicial de Água de Unova?",
+        "respostas": [495, 498, 501, 7],
+        "respostaCorreta": 501
+    },
+    {
+        "id": 48,
+        "pergunta": "Qual é a evolução final de Froakie?",
+        "respostas": [656, 657, 658, 6],
+        "respostaCorreta": 658
+    },
+    {
+        "id": 49,
+        "pergunta": "Qual Pokémon é a evolução de Magnemite?",
+        "respostas": [81, 82, 462, 100],
+        "respostaCorreta": 82
+    },
+    {
+        "id": 50,
+        "pergunta": "Qual destes Pokémon é do tipo Veneno/Lutador?",
+        "respostas": [849, 454, 68, 106],
+        "respostaCorreta": 454
+    },
+    {
+        "id": 51,
+        "pergunta": "Qual lendário é o mestre dos Titãs de Hoenn (Regis)?",
+        "respostas": [377, 378, 379, 486],
+        "respostaCorreta": 486
+    },
+    {
+        "id": 52,
+        "pergunta": "Qual Pokémon é conhecido como 'Pokémon Virtual'?",
+        "respostas": [137, 233, 474, 150],
+        "respostaCorreta": 137
+    },
+    {
+        "id": 53,
+        "pergunta": "Qual destes Pokémon evolui para Ninetales?",
+        "respostas": [37, 38, 58, 59],
+        "respostaCorreta": 37
+    },
+    {
+        "id": 54,
+        "pergunta": "Qual é o inicial de Fogo de Galar?",
+        "respostas": [810, 813, 815, 4],
+        "respostaCorreta": 813
+    },
+    {
+        "id": 55,
+        "pergunta": "Qual Pokémon possui a maior quantidade de evoluções?",
+        "respostas": [133, 25, 10, 63],
+        "respostaCorreta": 133
+    },
+    {
+        "id": 56,
+        "pergunta": "Qual destes é o lendário 'Pokémon Eclipse'?",
+        "respostas": [791, 792, 800, 384],
+        "respostaCorreta": 800
+    },
+    {
+        "id": 57,
+        "pergunta": "Qual é a evolução de Ponyta?",
+        "respostas": [77, 78, 58, 59],
+        "respostaCorreta": 78
+    },
+    {
+        "id": 58,
+        "pergunta": "Qual Pokémon é conhecido por carregar um alho-poró?",
+        "respostas": [83, 84, 85, 54],
+        "respostaCorreta": 83
+    },
+    {
+        "id": 59,
+        "pergunta": "Qual destes Pokémon é do tipo Aço/Fada?",
+        "respostas": [303, 707, 888, 311],
+        "respostaCorreta": 303
+    },
+    {
+        "id": 60,
+        "pergunta": "Qual Pokémon é o número 151 da Pokédex?",
+        "respostas": [150, 151, 152, 251],
+        "respostaCorreta": 151
+    },
+    {
+        "id": 61,
+        "pergunta": "Qual destes Pokémon é do tipo Inseto/Aço?",
+        "respostas": [123, 212, 597, 214],
+        "respostaCorreta": 212
+    },
+    {
+        "id": 62,
+        "pergunta": "Qual é o inicial de Planta de Paldea?",
+        "respostas": [906, 909, 912, 1],
+        "respostaCorreta": 906
+    },
+    {
+        "id": 63,
+        "pergunta": "Qual Pokémon lendário é conhecido como 'Pokémon Alpha'?",
+        "respostas": [493, 150, 249, 384],
+        "respostaCorreta": 493
+    },
+    {
+        "id": 64,
+        "pergunta": "Qual destes Pokémon evolui para Dragonite?",
+        "respostas": [147, 148, 149, 373],
+        "respostaCorreta": 148
+    },
+    {
+        "id": 65,
+        "pergunta": "Qual dos seguintes Pokémons é a última evolução de um pokemon inicial da região de Hoenn?",
+        "respostas": [448, 68, 212, 257],
+        "respostaCorreta": 257
+    },
+    {
+        "id": 66,
+        "pergunta": "Qual destes Pokémon é a evolução de Psyduck?",
+        "respostas": [54, 55, 186, 199],
+        "respostaCorreta": 55
+    },
+    {
+        "id": 67,
+        "pergunta": "Qual lendário de Galar representa o escudo?",
+        "respostas": [888, 889, 890, 891],
+        "respostaCorreta": 889
+    },
+    {
+        "id": 68,
+        "pergunta": "Qual Pokémon é conhecido por ter 3 cabeças?",
+        "respostas": [84, 85, 103, 635],
+        "respostaCorreta": 85
+    },
+    {
+        "id": 69,
+        "pergunta": "Qual destes Pokémon não é do tipo Terra/Dragão?",
+        "respostas": [443, 444, 445, 149],
+        "respostaCorreta": 445
+    },
+    {
+        "id": 70,
+        "pergunta": "Qual Pokémon é a evolução de Metang?",
+        "respostas": [374, 375, 376, 306],
+        "respostaCorreta": 376
+    },
+    {
+        "id": 71,
+        "pergunta": "Qual destes é o inicial de Fogo de Kalos?",
+        "respostas": [653, 654, 655, 4],
+        "respostaCorreta": 653
+    },
+    {
+        "id": 72,
+        "pergunta": "Qual Pokémon lendário vive no topo da Sky Pillar?",
+        "respostas": [382, 383, 384, 150],
+        "respostaCorreta": 384
+    },
+    {
+        "id": 73,
+        "pergunta": "Qual é o Pokémon número 250 na Pokédex?",
+        "respostas": [248, 249, 250, 251],
+        "respostaCorreta": 250
+    },
+    {
+        "id": 74,
+        "pergunta": "Qual destes Pokémon é do tipo Fantasma puro?",
+        "respostas": [92, 94, 487, 355],
+        "respostaCorreta": 355
+    },
+    {
+        "id": 75,
+        "pergunta": "Qual Pokémon evolui para Gyarados?",
+        "respostas": [129, 118, 119, 223],
+        "respostaCorreta": 129
+    },
+    {
+        "id": 76,
+        "pergunta": "Qual lendário representa o oceano em Hoenn?",
+        "respostas": [382, 383, 249, 131],
+        "respostaCorreta": 382
+    },
+    {
+        "id": 77,
+        "pergunta": "Qual é a evolução de Rhyhorn?",
+        "respostas": [111, 112, 464, 115],
+        "respostaCorreta": 112
+    },
+    {
+        "id": 78,
+        "pergunta": "Qual destes Pokémon é o inicial de Planta de Unova?",
+        "respostas": [495, 498, 501, 1],
+        "respostaCorreta": 495
+    },
+    {
+        "id": 79,
+        "pergunta": "Qual Pokémon é a evolução de Swablu?",
+        "respostas": [333, 334, 149, 227],
+        "respostaCorreta": 334
+    },
+    {
+        "id": 80,
+        "pergunta": "Qual destes Pokémon é do tipo Fada puro?",
+        "respostas": [122, 282, 439, 175],
+        "respostaCorreta": 175
+    }
+]
+}

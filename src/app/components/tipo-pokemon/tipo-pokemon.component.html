@@ -1,7 +1,6 @@
+<ul class="types">
+  @for (tipo of tipos; track $index) {
 
-        <ul class="types">
-          @for (tipo of tipos; track $index) {
-
-            <li [class]="'tipo-' + tipo?.type?.name">{{ tipo?.type?.name }}</li>
-          }
-        </ul>
+  <li [class]="'tipo-' + tipo?.type?.name">{{ tipo?.type?.name }}</li>
+  }
+</ul>
